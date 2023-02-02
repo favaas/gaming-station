@@ -1,0 +1,43 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+
+<h3 class="bookingHeading">Pending Booking</h3>
+
+<br><br><br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Booking Id</th>
+      <th scope="col">User Id</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <th>{{i.userid_id}}</th>
+      <td>{{i.date}}</td>
+      <td>{{i.time}}</td>
+      <td>{{i.status}}</td>
+      <td><a href="admin_cancel_booking/{{i.id}}"><button type="BUtton" class="btn btn-danger btn-sm btnsz cb">Cancel
+            Booking</span></button></a></td>
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+  <div class="bbbt"><a href="">
+    <button type="button" class="btn btn-primary">Book a Car</button></a>
+    <br><br>
+    <button type="button" class="btn btn-primary" onclick="history.back()">Back to Home</button>
+  </div>
+  </div>
+
+
+{% endblock %}
